@@ -9,13 +9,22 @@
       {
         "legacy": true
       }
+
     ],
+
+
+    "babel-plugin-parameter-decorator",
+
     [
-      "@babel/plugin-proposal-class-properties",
+      "babel-plugin-styled-components",
       {
-        "loose": true
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
       }
     ],
-    "babel-plugin-parameter-decorator"
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+      ["@babel/plugin-proposal-private-methods", { "loose": true }],
+      ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
   ]
 }
