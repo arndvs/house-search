@@ -9,7 +9,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return <>
     <Head>
           <title>Home Sweet Home</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon"
+href="/favicon.ico" />
         </Head>
       <Component {...pageProps} />
       {/* global providers i.e. auth provider, apollo provider */}
