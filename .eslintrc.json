@@ -1,3 +1,116 @@
 {
-  "extends": "next/core-web-vitals"
-}
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "globals": {
+      "React": true,
+      "google": true,
+      "mount": true,
+      "mountWithRouter": true,
+      "shallow": true,
+      "shallowWithRouter": true,
+      "context": true,
+      "expect": true,
+      "jsdom": true,
+      "JSX": true
+    },
+    "root": true,
+    // "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@emotion",
+      "tailwindcss",
+      "react",
+      "react-hooks",
+      //  "@typescript-eslint",
+      "prettier",
+      "import",
+      "jsx-a11y",
+      "testing-library",
+      "jest-dom"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "next/core-web-vitals",
+      "plugin:react/recommended",
+      "plugin:@next/next/recommended",
+      "plugin:jest-dom/recommended",
+      "plugin:tailwindcss/recommended"
+      //  "plugin:@typescript-eslint/recommended",
+      // "plugin:@typescript-eslint/eslint-recommended"
+    ],
+    "overrides": [
+      {
+        // only run testing library linting on test files not entire codebase
+        "files": [
+          "**/__tests__/**/*.[jt]s?(x)",
+          "**/?(*.)+(spec|test).[jt]s?(x)"
+        ],
+        "extends": ["plugin:testing-library/react"]
+      }
+    ],
+    "settings": {
+      "react": {
+        "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+      },
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        },
+        // use <root>/tsconfig.json
+        "typescript": {
+          "project": "./tsconfig.json"
+        }
+      }
+    },
+    "rules": {
+      "@emotion/import-from-emotion": "error",
+      "@emotion/jsx-import": "error",
+      "@emotion/no-vanilla": "error",
+      "@emotion/styled-import": "error",
+      "@emotion/syntax-preference": "off",
+      "@next/next/no-img-element": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "off",
+        { "args": "all", "argsIgnorePattern": "^_" }
+      ],
+      "import/extensions": "off",
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "jest.setup.ts",
+            "**/*.test.tsx",
+            "**/*.spec.tsx",
+            "**/*.test.ts",
+            "**/*.spec.ts"
+          ]
+        }
+      ],
+      "import/no-unresolved": "error",
+      "jsx-a11y/alt-text": "off",
+      "no-constant-condition": "off",
+      "no-unused-vars": ["off", { "args": "all", "argsIgnorePattern": "^_" }],
+      "no-use-before-define": "off",
+      "react/display-name": "off",
+      "react/jsx-filename-extension": "off",
+      "react/jsx-max-props-per-line": [
+        1,
+        {
+          "maximum": 1
+        }
+      ],
+      "react/jsx-props-no-spreading": "off",
+      "react/no-children-prop": "off",
+      "react/react-in-jsx-scope": "off",
+      "tailwindcss/classnames-order": "off"
+    }
+  }
