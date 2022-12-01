@@ -1,18 +1,23 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
-// import { ApolloProvider } from "@apollo/client";
-// import { useApollo } from "src/apollo";
-// import { AuthProvider } from "src/auth/useAuth";
+import { ApolloProvider } from "@apollo/client";
+import { useApollo } from "src/apollo";
+import { AuthProvider } from "src/auth/useAuth";
 import "../styles/index.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <>
-    <Head>
+  const client = useApollo();
+
+  return (
+    <AuthProvider>
+      <ApolloProvider client={client}>
+        <Head>
           <title>Home Sweet Home</title>
           <link rel="icon"
-href="/favicon.ico" />
+          href="/favicon.ico" />
         </Head>
-      <Component {...pageProps} />
-      {/* global providers i.e. auth provider, apollo provider */}
-  </>;
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </AuthProvider>
+  );
 }

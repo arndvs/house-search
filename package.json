@@ -25,6 +25,7 @@
     "@cloudinary/react": "^1.6.0",
     "@cloudinary/url-gen": "^1.8.6",
     "@emotion/eslint-plugin": "^11.10.0",
+    "@firebase/app-types": "^0.8.1",
     "@prisma/client": "^4.7.0",
     "@reach/combobox": "^0.18.0",
     "@types/node": "18.11.9",
