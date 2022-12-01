@@ -14,7 +14,7 @@ const Layout: FunctionComponent<IProps> = ({ main }) => {
 
   return (
     <div className="mx-auto text-white bg-gray-900 max-w-screen-2xl">
-      {' '}
+
       <nav
         className="bg-gray-800"
         style={{ height: '64px' }}
@@ -29,16 +29,16 @@ const Layout: FunctionComponent<IProps> = ({ main }) => {
               height={24}
             />
           </Link>
-          {authenticated ? (
+          {/* {authenticated ? ( */}
             <>
               <Link href="/houses/add">Add House</Link>
-              <button onClick={logout}>Logout</button>
+              {/* <button onClick={logout}>Logout</button> */}
             </>
-          ) : (
+          {/* ) : (
             <Link href="/auth">
               <div>Login / Signup</div>
             </Link>
-          )}
+          )} */}
         </div>
       </nav>
       <main style={{ minHeight: 'calc(100vh - 64px)' }}>{main}</main>

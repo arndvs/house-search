@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const client = useApollo();
 
   return (
-    <AuthProvider>
+    // <AuthProvider>
       <ApolloProvider client={client}>
         <Head>
           <title>Home Sweet Home</title>
@@ -18,6 +18,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </Head>
         <Component {...pageProps} />
       </ApolloProvider>
-    </AuthProvider>
+    // </AuthProvider>
   );
 }
