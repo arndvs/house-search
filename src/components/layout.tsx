@@ -7,10 +7,10 @@ interface IProps {
   main: ReactNode;
 }
 
-const authenticated = false;
+// const authenticated = false;
 
 const Layout: FunctionComponent<IProps> = ({ main }) => {
-  const { logout, authenticated } = useAuth();
+//   const { logout, authenticated } = useAuth();
 
   return (
     <div className="mx-auto text-white bg-gray-900 max-w-screen-2xl">
